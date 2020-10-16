@@ -15,10 +15,11 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
   const authorization = event.headers.Authorization
   const split = authorization.split(' ')
   const jwtToken = split[1]
+  const userId = getUserId(jwtToken)
 
   const newItem = {
     id: itemId,
-    userId: getUserId(jwtToken),
+    userId,
     ...parsedBody
   }
 
