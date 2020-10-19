@@ -1,7 +1,7 @@
 import { SNSEvent, SNSHandler, S3EventRecord } from 'aws-lambda'
 import 'source-map-support/register'
 import * as AWS from 'aws-sdk'
-import Jimp from 'jimp/es'
+import * as Jimp from 'jimp/es'
 
 const s3 = new AWS.S3()
 
